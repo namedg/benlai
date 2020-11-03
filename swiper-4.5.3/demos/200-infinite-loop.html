@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Link Swiper's CSS -->
+  <script src="../../js/rem.js"></script>
+  <link rel="stylesheet" href="../dist/css/swiper.min.css">
+  <link rel="stylesheet" href="../../css/xq.css">
+  <!-- Demo styles -->
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    .My_banner {
+      position: relative;
+      height: 3.75rem;
+    }
+
+    .My_banner .My_warp {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      width: 40px;
+      height: 20px;
+      font-size: 13px;
+      color: #666;
+      /* text-align: center;
+      line-height: 20px; */
+      background-color: rgba(0, 0, 0, .2);
+      z-index: 1000;
+      border-radius: 1rem;
+    }
+
+    .My_banner .My_warp li {
+      position: absolute;
+      top: 3px;
+      left: 12px;
+      display: none;
+    }
+
+    .My_banner .My_warp .active {
+      display: block;
+    }
+
+
+    .My_banner .My_slide1 {
+      background: url(http://image8.benlailife.com/ProductImages/000/000/347/608/app/c8e1e334-4985-43c5-a228-36acf1256b79.jpg?imageView2/2/w/625/format/webp) no-repeat;
+      background-size: 100% 375px;
+    }
+
+    .My_banner .My_slide2 {
+      background: url(http://image7.benlailife.com/ProductImages/000/000/347/608/app/728674df-bccb-408d-890d-8a66defaffc8.jpg?imageView2/2/w/1035/format/webp) no-repeat;
+      background-size: 100% 375px;
+    }
+
+    .My_banner .My_slide3 {
+      background: url(http://image6.benlailife.com/ProductImages/000/000/347/608/app/b4373451-5ff3-4ecf-a262-f84261ce7563.jpg?imageView2/2/w/1035/format/webp) no-repeat;
+      background-size: 100% 375px;
+    }
+
+    .My_banner .My_slide4 {
+      background: url(http://image7.benlailife.com/ProductImages/000/000/347/608/app/4f96138b-535a-493f-9508-fb558ff29cb8.jpg?imageView2/2/w/1035/format/webp) no-repeat;
+      background-size: 100% 375px;
+    }
+
+    .My_banner .My_slide5 {
+      background: url(http://image.benlailife.com/ProductImages/000/000/332/915/app/cab8af42-13cb-438a-a3b0-653132d5fdc1.jpg?imageView2/2/w/1035/format/webp) no-repeat;
+      background-size: 100% 375px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="swiper-container My_banner">
+    <div class="swiper-wrapper My_wrapper">
+      <div class="swiper-slide My_slide1 My_slide"></div>
+      <div class="swiper-slide My_slide2 My_slide"></div>
+      <div class="swiper-slide My_slide3 My_slide"></div>
+      <div class="swiper-slide My_slide4 My_slide"></div>
+      <div class="swiper-slide My_slide5 My_slide"></div>
+    </div>
+    <ul class="My_warp">
+      <li class="active">1/5</li>
+      <li>2/5</li>
+      <li>3/5</li>
+      <li>4/5</li>
+      <li>5/5</li>
+    </ul>
+  </div>
+
+  <script src="../../js/jquery-1.12.4.js"></script>
+  <script src="../dist/js/swiper.min.js"></script>
+  <script>
+    $(function () {
+      var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+
+      $(".My_banner .My_wrapper").width(375 * $(".My_banner .My_wrapper div").length);
+
+      function f() {
+        $(".My_banner .My_wrapper").animate({
+          marginLeft: -375
+        }, 1000, function () {
+          $(".My_banner .My_wrapper").css({
+            marginLeft: 0
+          });
+          $(".My_banner .My_wrapper div:last").after($(".My_banner .My_wrapper div:first"));
+        });
+      }
+      t = setInterval(f, 3000);
+
+
+
+    })
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6153278",
+      "name": "三点",
+      "font_class": "sandian",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "7965875",
+      "name": "比心",
+      "font_class": "bixin",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "9747777",
+      "name": "禁止",
+      "font_class": "jinzhi",
+      "unicode": "e803",
+      "unicode_decimal": 59395
+    },
+    {
+      "icon_id": "10809823",
+      "name": "火 热点  hot",
+      "font_class": "changyongtubiao-xianxingdaochu-zhuanqu-",
+      "unicode": "e732",
+      "unicode_decimal": 59186
+    },
+    {
+      "icon_id": "11177626",
+      "name": "加号",
+      "font_class": "ziyuan",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    }
+  ]
+}
